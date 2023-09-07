@@ -1,0 +1,147 @@
+@font-face {
+    font-family: "Gotham";
+    src: url("/fonts/GothamLight.ttf") format("truetype");
+  }    
+  .grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    border-bottom: #1E1E1E;
+  }
+
+  .grid-item{
+    background-color: #641E1680;
+    padding: 1rem;
+  }
+
+  .my-button{
+    display: flexbox;
+    gap: 10px 10px;
+    padding: 10px 20px;
+    background-color: #1E1E1E;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #ccc;
+    transition: background-color 0.3 ease;
+    font-size: large;
+    text-align: center;
+  }
+  .my-button:hover{
+    background-color:#BA4A00;
+    color: white;
+    text-decoration: none;
+  }
+  .botonAtras{
+    display: inline-flex;
+    align-items: normal;
+    padding: 10px 20px;
+    font-size: large;
+    text-align: center;
+    background-color: #1E1E1E;
+    color: #BA4A00;
+    border-radius: 10px;
+    border: 2px solid #641E16;
+    cursor: pointer;
+    transition: background-color 0.3 ease;
+  }
+    .botonAtras:hover{
+    background-color:black;
+    color: white;
+    text-decoration: underline;
+  }
+
+  .tallas {
+    display: flexbox;
+    gap: 1rem;
+}
+.talla {
+    padding: 10px 20px;
+    background-color: #1E1E1E;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+  .botonCarro{
+    margin-top: 20px;
+    display: flexbox;
+    gap: 10px 10px;
+    padding: 10px 20px;
+    background-color: #1E1E1E;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #ccc;
+  }
+  .botonCarro:hover{
+    background-color:#BA4A00;
+    color: white;
+    text-decoration: none;
+  }
+
+  .carrito{
+    background-color: #1E1E1EEE;
+    color: #ccc;
+    border: none;
+
+
+  }
+  body {
+    font-family: Gotham, sans-serif;
+    margin: 0;
+    padding: 1rem;
+    color: #BA4A00;
+    background-image: url('background.jpg');
+    background-size: cover; /* Escalar la imagen para cubrir todo el fondo */
+    background-repeat: no-repeat; /* Evitar que se repita la imagen */
+  
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: xx-large;
+  }
+  
+  .producto {
+    display: flex;
+    align-items: left;
+    margin-bottom: 20px;
+  }
+  
+  .producto img {
+    width: 170px;
+    margin-right: 20px;
+  }
+  
+  .producto h2 {
+    font-size: x-large;
+    text-align: left;
+  }
+  .p{
+    font-size: large;
+    text-align: left;
+  }
+
+  body{
+    background-color: #1E1E1E ;
+  }
+  footer{
+      margin-top: 12rem;
+      align-items: flex-end;
+      background-color: #30303090;
+      font-family: Gotham;
+      text-align: center;
+      font-size: x-large;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+  a{
+      color: #ccc;
+      text-decoration: none;
+  }
+  a:hover{
+      background-color: #641E16;
+      text-decoration: underline;
+  }
