@@ -1,0 +1,211 @@
+create database myBase;
+show databases;
+use myBase;
+show tables;
+use myBase;
+
+/*creo la tabla de articulos*/
+CREATE TABLE articulos (
+    id_articulo INTEGER NOT NULL AUTO_INCREMENT,
+    descripcion VARCHAR(30),
+    precio FLOAT,
+    stock INTEGER,
+    stock_critico INTEGER,
+    CONSTRAINT pk_articulos PRIMARY KEY (id_articulo)
+);
+
+/*Muestro la tabla*/
+use myBase;
+show tables;
+SELECT * FROM articulos;
+
+/*creo la tabla de proveedores*/
+CREATE TABLE proveedores (
+    id_proveedor INTEGER NOT NULL AUTO_INCREMENT,
+    descripcion VARCHAR(30),
+    direccion VARCHAR(30),
+    email VARCHAR(30),
+    telefono INTEGER,
+    localidad integer,
+    CONSTRAINT pk_proveedores PRIMARY KEY (id_proveedor)
+);
+/*Muestro la tabla*/
+use myBase;
+show tables;
+SELECT * FROM proveedores;
+
+/*creo la tabla de clientes*/
+CREATE TABLE clientes (
+    id_cliente INTEGER NOT NULL AUTO_INCREMENT,
+    descripcion VARCHAR(30),
+    email VARCHAR(30),
+    telefono VARCHAR(30),
+    localidad INTEGER,
+    CONSTRAINT pk_clientes PRIMARY KEY (id_cliente)
+);
+/*Muestro la tabla*/
+use myBase;
+show tables;
+SELECT * FROM clientes;
+
+/*creo la tabla de compras*/
+CREATE TABLE compras (
+    id_compra INTEGER NOT NULL AUTO_INCREMENT,
+    detalle VARCHAR(30),
+    fecha DATETIME,
+    precio FLOAT,
+    proveedor INTEGER,
+    articulo INTEGER,
+    CONSTRAINT pk_compras PRIMARY KEY (id_compra),
+    CONSTRAINT fk_proveedor FOREIGN KEY (proveedor)
+        REFERENCES proveedores (id_proveedor),
+    CONSTRAINT fk_articulo FOREIGN KEY (articulo)
+        REFERENCES articulos (id_articulo)
+);
+/*Muestro la tabla*/
+use myBase;
+show tables;
+SELECT * FROM compras;
+
+/*creo la tabla de ventas*/
+use myBAse;
+CREATE TABLE ventas (
+    id_venta INTEGER NOT NULL AUTO_INCREMENT,
+    detalle VARCHAR(30),
+    fecha DATETIME,
+    precio FLOAT,
+    cliente integer,
+    articulo INTEGER,
+    CONSTRAINT PRIMARY KEY (id_venta),
+    CONSTRAINT fk_cliente FOREIGN KEY (cliente)
+        REFERENCES clientes (id_cliente),
+    CONSTRAINT fk2_articulo FOREIGN KEY (articulo)
+        REFERENCES articulos (id_articulo)
+);
+/*Muestro la tabla*/
+use myBase;
+show tables;
+SELECT * FROM ventas;
+
+/*un proceso que inserta la tabla articulos*/
+DELIMITER //
+CREATE PROCEDURE INSERTAR_TABLA_ARTICULO(IN descripcion varchar(30), IN precio float, stock integer, stock_critico integer)
+BEGIN 
+	INSERT INTO mybase.articulos (descripcion, precio, stock, stock_critico) VALUES (descripcion, precio, stock, stock_critico);
+COMMIT;
+END//
+DELIMITER ;
+call mybase.INSERTAR_TABLA_ARTICULO('auto', 10000, 20, 20);
+
+/*un proceso que inserta la tabla compras*/
+DELIMITER //
+CREATE PROCEDURE INSERTAR_TABLA_COMPRAS(IN detalle varchar(30), IN fecha datetime, in precio integer)
+BEGIN 
+	INSERT INTO mybase.compras (detalle, fecha, precio) VALUES (detalle, fecha, precio);
+COMMIT;
+END//
+DELIMITER ;
+update tabla
+set columna = texto
+where id.articulos = 39;
+call mybase.INSERTAR_TABLA_COMPRAS("coche", "05/07/23", 1000000);
+
+/*un update de cualquier tabla de varchar*/
+DELIMITER //
+CREATE PROCEDURE Update_Caualquier_Tabla_Text(in accion varchar(30),in campo varchar(30), in actualizar varchar(30), in ids integer)
+BEGIN
+	if (accion = "articulos") then
+		update articulos set descripcion = actualizar where (id_articulo = ids);
+        
+	elseif (accion = "clientes") then
+		if (campo = "descripcion") then
+			update clientes set descripcion = actualizar where (id_cliente = ids);
+		elseif (campo = "email") then
+			update clientes set email = actualizar where (id_cliente = ids);
+		elseif (campo = "telefono") then
+			update clientes set telefono = actualizar where (id_cliente = ids);
+        end if;
+        
+	elseif (accion = "compras") then
+		update compras set descripcion = actualizar where (id_compra = ids);
+        
+	elseif (accion = "proveedores") then
+        if (campo = "descripcion") then
+			update proveedores set descripcion = actualizar where (id_proveedor = ids);
+		elseif (campo = "direccion") then
+			update proveedores set direccion = actualizar where (id_proveedor = ids);
+		elseif (campo = "email") then
+			update proveedores set email = actualizar where (id_proveedor = ids);
+		elseif (campo = "telefono") then
+			update proveedores set telefono = actualizar where (id_proveedor = ids);
+        end if;
+        
+	elseif (accion = "ventas") then
+		update ventas set descripcion = actualizar where (id_venta = ids);
+    end if;
+COMMIT;
+END//
+DELIMITER ;
+call mybase.Update_Caualquier_Tabla_Text("articulos", "descripcion", "camion", 2);
+
+/*update en cualquier tabla de integer*/
+DELIMITER //
+CREATE PROCEDURE Update_Caualquier_Tabla_Integer(in accion varchar(30),in campo varchar(30), in actualizar FLOAT, in ids integer)
+BEGIN
+	if (accion = "articulos") then
+		if (campo = "precio") then
+			update articulos set precio = actualizar where (id_articulo = ids);
+		elseif (campo = "stock") then
+			update articulos set stock = actualizar where (id_articulo = ids);
+		elseif (campo = "stock_critico") then
+			update articulos set stock_critico = actualizar where (id_articulo = ids);
+		end if;
+	
+    elseif (accion = "clientes") then
+		update clientes set localidad = actualizar where (id_cliente = ids);
+        
+	elseif (accion = "compras") then
+		if (campo = "precio") then
+			update compras set precio = actualizar where (id_articulo = ids);
+		elseif (campo = "proveedor") then
+			update compras set proveedor = actualizar where (id_articulo = ids);
+		elseif (campo = "articulo") then
+			update compras set articulo = actualizar where (id_articulo = ids);
+		end if;
+	
+    elseif (accion = "proveedores") then
+		update proveedores set localidad = actualizar where (id_articulo = ids);
+        
+	elseif (accion = "ventas") then
+		if (campo = "precio") then
+			update ventas set precio = actualizar where (id_articulo = ids);
+		elseif (campo = "cliente") then
+			update ventas set cliente = actualizar where (id_articulo = ids);
+		elseif (campo = "articulo") then
+			update ventas set articulo = actualizar where (id_articulo = ids);
+        end if;
+    end if;
+COMMIT;
+END//
+DELIMITER ;
+call mybase.Update_Caualquier_Tabla_Integer('articulos', 'precio', 2000, 1);
+
+/*elimina filas de cualquier tabla*/
+DELIMITER //
+CREATE PROCEDURE Delete_tabla(in accion varchar(30), in ids integer)
+BEGIN
+	if (accion = "articulos") then
+		DELETE FROM articulos WHERE (id_articulo = ids);
+	elseif (accion = "clientes") then
+		DELETE FROM clientes WHERE (id_articulo = ids);
+    elseif (accion = "compras") then
+		DELETE FROM compras WHERE (id_articulo = ids);
+    elseif (accion = "proveedores") then
+		DELETE FROM proveedores WHERE (id_articulo = ids);
+    elseif (accion = "ventas") then
+		DELETE FROM ventas WHERE (id_articulo = ids);
+	end if;
+COMMIT;
+END//
+DELIMITER ;
+call mybase.Delete_tabla("articulos", 2);
