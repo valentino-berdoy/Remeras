@@ -15,7 +15,7 @@
 
   .grid-item{
     background-color: #641E1680;
-    padding: 1rem;
+    padding: 5px;
   }
 
   .my-button{
@@ -107,6 +107,19 @@
     top: 97px;
     align-items: flex-start;
   }
+
+  .circuloProducto{
+    width: 25px;
+    height: 25px;
+    background-color: var(--color-primario);
+    border-radius: 50%;
+    z-index: -1;
+    position: absolute;
+    right: 22px;
+    top: 21px;
+    align-items: flex-start;
+  }
+
   #contadorCarrito{
     z-index: 1;
     position: absolute;

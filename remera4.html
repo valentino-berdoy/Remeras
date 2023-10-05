@@ -6,11 +6,20 @@
     </head>
 
     <body>
-        <a href="Index.html" class="botonAtras">Volver al inicio</a>
+        
+        <div class="carritoProducto">
+            <a href="Index.html" class="botonAtras">Volver al inicio</a>
+            <button class="carrito"><img src="carrito.png" alt="Carrito de compras">
+              <div class="circuloProducto"></div>
+              <span id="contadorCarrito">0</span>
+            </button>
+        </div>
+
+        
         <h1>Remera 4</h1>
         <div class="grid-item">
             <div class="producto">
-            <img src="remera4.jpg" alt="Remera 1">
+            <img src="remera4.jpg" alt="Remera 4">
             <div class="descripcion">
                 <h2>remera de manga corta de 80% algodon</h2>   
                 <div class="tallas">
@@ -19,15 +28,12 @@
                     <button class="talla">L</button>
                     <button class="talla">XL</button>
                 </div>
-                <button class="botonCarro">Agregar al carrito</button>
+                <button id="agregarAlCarrito" class="botonCarro">Agregar al carrito</button>
             </div>
             </div>
         </div>
 
 
-
-
-    </body>
 
     <footer>
         Coopyright - Todos los derechos reservados - RAGE
@@ -36,4 +42,6 @@
         <li><b><a href="https://www.instagram.com/lizytagliani/">Instagram </a></b><a href="instagram.png"></a></li>
         <li><b><a href=https://www.facebook.com/claudia.siciliano.967>Facebook</a></b></li>
     </footer>
+    </body>
+    <script src="index.js" defer></script>
 </html>
