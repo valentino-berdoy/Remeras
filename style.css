@@ -1,5 +1,6 @@
 :root{
   --color-primario: #BA4A00;
+  --color-secundario: #641E16;
 }
 
 @font-face {
@@ -19,6 +20,8 @@
   }
 
   .my-button{
+    width: 25px;
+    height: 25px;
     display: flexbox;
     gap: 10px 10px;
     padding: 10px 20px;
@@ -27,15 +30,27 @@
     border-radius: 4px;
     cursor: pointer;
     color: #ccc;
-    transition: background-color 0.3 ease;
+    transition: background-color 0.5s ease, width 0.5s, height 0.5s;
     font-size: large;
     text-align: center;
+
   }
   .my-button:hover{
-    background-color: var(--color-primario);
+    width: 50px;
+    height: 50px;
     color: white;
     text-decoration: none;
+    animation-name: myButton;
+    animation-duration: 2s;
+    animation-direction: reverse;
   }
+  
+@keyframes myButton{
+  0%{background-color: #1E1E1E;}
+  50%{background-color: var(--color-primario);}
+  100%{background-color: var(--color-secundario);}
+}
+
   .botonAtras{
     display: inline-flex;
     width: auto;
@@ -49,12 +64,13 @@
     border-radius: 10px;
     border: 2px solid #641E16;
     cursor: pointer;
-    transition: background-color 0.3 ease;
+    transition: background-color 1s, width 1s, height 1s;
   }
     .botonAtras:hover{
+    width: auto;
+    height: 50px;
     background-color:black;
     color: white;
-    text-decoration: underline;
   }
 
   .tallas {
@@ -80,6 +96,7 @@
     border-radius: 4px;
     cursor: pointer;
     color: #ccc;
+    
   }
   .botonCarro:hover{
     background-color:var(--color-primario);
@@ -90,12 +107,14 @@
   .carrito{
     background-color: transparent;
     border: none;
-    color: #ccc;
+    stroke: #000;
     cursor: pointer;
     padding: 10px;
     display: flex;
+
     
   }
+
   .circulo{
     width: 25px;
     height: 25px;
@@ -120,11 +139,7 @@
     align-items: flex-start;
   }
 
-  #contadorCarrito{
-    z-index: 1;
-    position: absolute;
-    right: 30px;
-  }
+
   .carritoProducto{
     background-color: transparent;
     display: flex;
@@ -135,6 +150,7 @@
     background-color:  transparent;
     display: flex;
     justify-content: flex-end;
+    stroke: #000;
   }
 
   body {
@@ -162,6 +178,11 @@
   .producto img {
     width: 170px;
     margin-right: 20px;
+    transition: height 1s, width 1s;
+  }
+  .producto img:hover{
+    width: 250px;
+    height: auto;
   }
   
   .producto h2 {
