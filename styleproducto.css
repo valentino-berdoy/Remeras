@@ -56,15 +56,6 @@ h1 {
   transform: translateX(-52%); /* Centra horizontalmente la imagen */
 }
 
-.carritoIndex {
-  margin-top: -4%;
-  background-color: transparent;
-  display: flex;
-  justify-content: flex-end;
-  stroke: #000;
-}
-
-
 .carrito{
   background-color: transparent;
   border: none;
@@ -72,27 +63,25 @@ h1 {
   cursor: pointer;
   padding: 10px;
   display: flex;
-
-  
+  float: right;  
 }
 
-.luna{
-  width: 45px;
-  height: 40px;
-  margin-top: 5px;
-  position: absolute;
-  left: 98%;
-  top: -1%;
+.luna {
+  right: 20px;
+  width: 43px;
+  height: 35px;
+  position: relative;
 }
-
-
-.carritoProducto{
-  background-color: transparent;
-  display: flex;
-  justify-content: space-between;
-}
-
  
+.contprod {
+  z-index: 99;
+  top: 4px;
+  left: 8px;
+  position: relative;
+  color: #000;
+  font-size: 23px;
+}
+
 .botonAtras{
   display: grid;
   width: 15%;
@@ -129,15 +118,7 @@ h1 {
 
 
 /*Principal*/
-.carrito{
-  background-color: transparent;
-  border: none;
-  stroke: #000;
-  cursor: pointer;
-  padding: 10px;
-  display: flex;
-  float: right;  
-}
+
 .botonCarro{
   width: 200px;
   height: 50px;
@@ -150,7 +131,7 @@ h1 {
   border: 1px solid var(--color-primario);
   border-radius: 4px;
   cursor: pointer;
-  color: var(--color-primario);
+  color: #ccc;
   margin-top: 50px;
 
 }
@@ -166,7 +147,7 @@ h1 {
   color: white;
   text-decoration: none;
   animation-name: botonCarro;
-  animation-duration: 5s;  
+  animation-duration: 2s;  
 }
 
 
