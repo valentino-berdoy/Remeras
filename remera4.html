@@ -2,33 +2,52 @@
 <html>
     <title>Remera 4</title>
     <head>
-      <link href="style.css" rel="stylesheet">
+      <link href="styleproducto.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
 
     <body>
-        
-        <div class="carritoProducto">
-            <a href="Index.html" class="botonAtras">Volver al inicio</a>
-            <button class="carrito"><img src="carrito.png" alt="Carrito de compras">
-              <div class="circuloProducto"></div>
-              <span id="contadorCarrito">0</span>
-            </button>
+        <div class="header">
+            
+            <h1 class="tituloheader">RAGE</h1>
+
+            <img src="img/jupiter.png" class="imgrage">
+            <div class="carritoIndex">
+              <button class="carrito"><img src="img/carrito.png" alt="Carrito de compras">
+                <span class="contprod" id="contador-productos">0</span>
+                <img src="img/luna.png" class="luna">
+                  
+                
+              </button>
+            </div>
+            <div class="botonAtras">
+                <a href="Index.html">Volver al inicio</a>
+                <a href="Index.html"><i class="fa-solid fa-arrow-left-long"></i></a>
+            </div>
         </div>
 
         
-        <h1>Remera 4</h1>
+          <h1 class="titleproduct">Remera de manga corta de 80% algodon</h1>   
         <div class="grid-item">
             <div class="producto">
-            <img src="remera4.jpg" alt="Remera 4">
+            <img src="img/remera4.jpg" alt="Remera 4">
             <div class="descripcion">
-                <h2>remera de manga corta de 80% algodon</h2>   
                 <div class="tallas">
-                    <button class="talla">S</button>
-                    <button class="talla">M</button>
-                    <button class="talla">L</button>
-                    <button class="talla">XL</button>
+                    <h2 class="titletalle">Talle:
+                    <button id="talleS" class="talla">S</button>
+                    <button id="talleM" class="talla">M</button>
+                    <button id="talleL" class="talla">L</button>
+                    <button id="talleXL" class="talla">XL</button>
+                    </h2>
                 </div>
-                <button id="agregarAlCarrito" class="botonCarro">Agregar al carrito</button>
+                <div class="tallas">
+                    <h1 class="h1-cantidad">Cantidad: <input type="number" id="cantidad" min="1" value="1"></h1>
+                </div>
+                <div class="info">
+                    <h2>Descripcion del producto</h1>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum saepe voluptas fugiat excepturi voluptatem. Doloribus officia velit illo, eius dolorem laudantium itaque rem voluptates inventore soluta totam consectetur enim ut.
+                </div>
+                <button id="agregarAlCarrito" class="botonCarro">Agregar al carrito</button>  
             </div>
             </div>
         </div>
@@ -43,5 +62,6 @@
         <li><b><a href=https://www.facebook.com/claudia.siciliano.967>Facebook</a></b></li>
     </footer>
     </body>
-    <script src="index.js" defer></script>
+    <script src="producto.js" defer></script>
+    
 </html>
