@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Mostrar los resultados
         while ($usu = $sql->fetch_assoc()) {
             if ($usu['usuarios'] >= 1) {
-                header("Location: ./inicio.html");
+                header("Location: ./index.html");
             }
             else{
                 $mensaje = true;
@@ -53,9 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <input type="submit" value="Iniciar Sesión">
 
-            <a href="registro.html">Registro</a>
+            <a href="registro.php">Registro</a>
         </div>
     </form>
 </body>
 </html>
-
