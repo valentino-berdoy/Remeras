@@ -104,7 +104,14 @@ input[type="text"]{
   color: #ccc;
   margin: 10px;
 }
-
+input[type="email"]{
+  background-color: #1E1E1E;
+  border: var(--color-primario) solid 2px;
+  border-radius: 5px;
+  padding: 5px;
+  color: #ccc;
+  margin: 10px;
+}
 input[type="password"]{
   background-color: #1E1E1E;
   border: var(--color-primario) solid 2px;

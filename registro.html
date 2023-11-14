@@ -4,25 +4,26 @@
     <link href="styleindex.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Inicio de Sesión</title>
 </head>
 <body>
     
-    <form action="database.php" method="post">
+    <form action="registro.php" method="post">
         <div class="formulario">
             <h2>Registrate</h2>
             <label for="usuario">Usuario:</label>
             <input type="text" name="usuario" required>  
 
             <label for="email">Email:</label>
-            <input type="text" name="email" required>  
+            <input type="email" name="email" required>  
 
             <label for="contrasena">Contraseña:</label>
             <input type="password" name="contrasena" required>
 
             <input type="submit" value="Iniciar Sesión">
 
-            <a href="index.html">iniciar sesion</a>
+            <a href="index.html">Registrase</a>
         </div>
     </form>
 </body>
