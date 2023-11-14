@@ -8,8 +8,13 @@ if (mysqli_connect_errno()) {
 }
 
 // Realizar la consulta
-$query = "select * from mybase.articulos";
-$result = mysqli_query($c, $query);
+$usuario = $_POST['usuario'];
+$email = $_POST['email'];
+$contrasena = $_POST['contrasena'];
+
+// Consulta SQL para insertar datos en la base de datos (ajusta la tabla y las columnas según tu estructura)
+$sql = "INSERT INTO usuarios (usuario, email, contrasena) VALUES ('$usuario', '$email', '$contrasena')";
+
 
 // Verificar si la consulta fue exitosa
 if (!$result) {
