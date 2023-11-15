@@ -1,23 +1,27 @@
-// Obtener referencias a elementos HTML
-const botonAgregarAlCarrito = document.getElementById("agregarAlCarrito");
-const contadorCarrito = document.getElementById("contadorCarrito");
+const carrito = document.getElementById('carrito')
+const contadorProductos = document.getElementById('contador-productos')
 
-// Recuperar la cantidad en el carrito desde localStorage
-let cantidadEnCarrito = parseInt(localStorage.getItem('cantidadEnCarrito')) || 0;
-
-// Inicializar el contador en la página
-contadorCarrito.textContent = cantidadEnCarrito;
-
-// Agregar un evento al botón "Añadir al carrito"
-botonAgregarAlCarrito.addEventListener("click", () => {
-    // Incrementar la cantidad en el carrito
-    cantidadEnCarrito++;
-    // Actualizar el contador en la página
-    contadorCarrito.textContent = cantidadEnCarrito;
-
-    // Guardar la cantidad en el carrito en localStorage
-    localStorage.setItem('cantidadEnCarrito', cantidadEnCarrito);
-});
+let lista = []
+let valortotal = 0
 
 
-console.log(cantidadEnCarrito);
+// Función para abrir el modal
+function abrirCarro() {
+    var modal = document.getElementById("listaDeproductos");
+    modal.style.display = "block"; // Muestra el modal
+    console.log("abierto");
+}
+
+// Función para cerrar el modal
+function cerrarCarro() {
+    var modal = document.getElementById("listaDeproductos");
+    modal.style.display = "none"; // Oculta el modal
+}
+
+// Cerrar el modal si se hace clic fuera del contenido
+window.onclick = function(event) {
+    var modal = document.getElementById("listaDeproductos");
+    if (event.target == modal) {
+        modal.style.display = "none"; // Oculta el modal si se hace clic fuera de él
+    }
+}

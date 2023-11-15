@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link href="styleindex.css" rel="stylesheet">
+    <link href="stylephp.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -47,9 +47,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="contrasena">Contraseña:</label>
             <input type="password" name="contrasena" required>
 
-            <input type="submit" value="Iniciar Sesión">
+            <input type="submit" value="Registrarse">
 
-            <a href="index.php">Registrase</a>
+            <a href="index.php">Ya tengo una cuenta</a>
         </div>
     </form>
 </body>
